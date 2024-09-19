@@ -1,0 +1,43 @@
+.nav-bar-container {
+  height: 60px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(204, 240, 240);
+  border-radius: 15px;
+}
+
+.logo img {
+  max-height: 60px;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+
+.central-nav-items {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.input-field {
+  height: 40px;
+  border-radius: 15px;
+  outline: none;
+}
+
+.right-nav-items {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding-right: 10px;
+}
+
+.profile-icon img {
+  max-height: 35px;
+}
+
+.profile-icon img:hover{
+  max-height: 35px;
+  cursor: pointer;
+}
+
