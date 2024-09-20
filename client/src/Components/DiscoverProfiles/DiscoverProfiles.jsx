@@ -1,34 +1,38 @@
-import { useEffect, useState } from 'react';
+/* eslint-disable react/prop-types */
 import './DiscoverProfiles.css';
 
-export default function DiscoverProfiles () {
-  const [list, setList] = useState(null);
-
-  async function fetchProfiles () {
-    try {
-      const res = await fetch('http://localhost:3000/gear')
-      const data = await res.json();
-      setList(data);
-    } catch (err) {
-      console.log(err);
-    }
-  }
-
-  useEffect(() => {
-    fetchProfiles();
-  }, []);
+export default function DiscoverProfiles ({profileList, handleProfileClick, changeState}) {
 
 
   return (
     <>
-     {/* {list.map(function(profile) {
+    <div className='font-bold underline'>
+      All Users
+    </div>
+    <div className='discover-profiles-container'>
+     {profileList.map(function(profile) {
       return (
-        <div key={profile.id}>
-          {profile.username}
+        <div key={profile._id} className='profile-container hover: cursor-pointer' onClick={() => {handleProfileClick(profile._id); changeState('user')}}>
+          <div className='profile-username'>
+            <h3>
+              {profile.username}
+            </h3>
+          </div>
+           <div className='profile-gear-list'>
+              {profile.gear.map(function(gear) {
+                return (
+                  <div key={gear._id}>
+                    {gear.make} {gear.model} <br /> <br />
+                  </div>
+                )
+              })
+              }
+              </div>
         </div>
       )
     })
-    } */}
+    }
+    </div>
     </>
   )
 }

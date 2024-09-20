@@ -1,0 +1,14 @@
+.user-profile-container {
+  display: flex;
+  height: 100%;
+}
+
+.user-gear-container{
+  flex: 1;
+  margin: 10px;
+}
+
+.user-wishlist-container {
+  flex: 1;
+  margin: 10px;
+}

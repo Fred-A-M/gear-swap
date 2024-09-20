@@ -1,0 +1,14 @@
+.other-profile-container {
+  display: flex;
+  height: 100%;
+}
+
+.other-gear-container{
+  flex: 1;
+  margin: 10px;
+}
+
+.other-wishlist-container {
+  flex: 1;
+  margin: 10px;
+}
