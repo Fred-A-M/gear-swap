@@ -51,7 +51,30 @@ const profileSchema = new mongoose.Schema({
   },
 });
 
+const requestSchema = new mongoose.Schema({
+  senderId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Profile',
+    required: true
+  },
+  receiverId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Profile',
+    required: true
+  },
+  status: {
+    type: String,
+    enum: ['pending', 'accepted', 'rejected'],
+    default: 'pending'
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now
+  }
+});
+
 
 const Profile = mongoose.model('Profile', profileSchema);
 const Gear = mongoose.model('Gear', gearSchema);
-module.exports = {Profile, Gear};
+const Request = mongoose.model('Request', requestSchema);
+module.exports = {Profile, Gear, Request};

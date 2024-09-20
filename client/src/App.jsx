@@ -1,15 +1,14 @@
 import { useState, useEffect } from 'react'
 import './App.css'
 import Home from './Components/Home/Home'
-import { WishList, GearList } from './tools'
+import { profile } from './tools'
 import UsersProfile from './Components/UsersProfile/UsersProfile';
 import NewGearForm from './Components/NewGearForm/NewGearForm';
 import OtherUser from './Components/OtherUser/OtherUser';
 
 function App() {
   const [state, setState] = useState('home');
-  const [hardWishList, setHardWishList] = useState(WishList);
-  const [hardGearList, setHardGearList] = useState(GearList);
+  const [hardProfile, setHardProfile] = useState(profile);
   const [selectedProfileId, setSelectedProfileId] = useState(null);
   const [list, setList] = useState([]);
 
@@ -31,12 +30,8 @@ function App() {
     setState(newState);
   }
 
-  function changeWishList (newState) {
-    setHardWishList(newState);
-  }
-
-  function changeGearList (newState) {
-    setHardGearList(newState);
+  function changeProfile (newState) {
+    setHardProfile(newState);
   }
 
   function handleProfileClick (id) {
@@ -45,11 +40,11 @@ function App() {
 
   return (
     <>
-    {state === 'home' && <Home hardWishList={hardWishList} hardGearList={hardGearList} changeState={changeState} handleProfileClick={handleProfileClick} list={list}/>}
-    {state === 'profile' && <UsersProfile changeState={changeState} hardGearList={hardGearList} hardWishList={hardWishList}/>}
+    {state === 'home' && <Home hardProfile={hardProfile} changeState={changeState} handleProfileClick={handleProfileClick} list={list}/>}
+    {state === 'profile' && <UsersProfile changeState={changeState} hardProfile={hardProfile}/>}
     {state === 'user' && <OtherUser changeState={changeState} selectedProfileId={selectedProfileId} list={list} />}
-    {state === 'newGear' && <NewGearForm state={state} changeState={changeState} changeGearList={changeGearList} hardGearList={hardGearList}/>}
-    {state === 'newWish' && <NewGearForm state={state} changeState={changeState} changeWishList={changeWishList} hardWishList={hardWishList}/>}
+    {state === 'newGear' && <NewGearForm state={state} changeState={changeState} changeProfile={changeProfile} hardProfile={hardProfile} fetchProfiles={fetchProfiles} />}
+    {state === 'newWish' && <NewGearForm state={state} changeState={changeState} changeProfile={changeProfile} hardProfile={hardProfile} fetchProfiles={fetchProfiles} />}
     </>
   )
 }

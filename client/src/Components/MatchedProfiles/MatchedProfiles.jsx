@@ -1,11 +1,11 @@
 /* eslint-disable react/prop-types */
 import './MatchedProfiles.css'
 
-export default function MatchedProfiles ({profileList, hardWishList, changeState, handleProfileClick}) {
+export default function MatchedProfiles ({profileList, hardProfile, changeState, handleProfileClick}) {
 
   function isMatch (user, wish) {
     return user.gear.some(gearItem => {
-      return wish.some(wishItem => {
+      return wish.wishlist.some(wishItem => {
         if (gearItem.instrument === wishItem.instrument &&
         gearItem.make === wishItem.make &&
         gearItem.model === wishItem.model)
@@ -22,19 +22,18 @@ export default function MatchedProfiles ({profileList, hardWishList, changeState
     </div>
     <div className='matched-profiles-container'>
      {profileList.map(function(profile) {
-      if (isMatch(profile, hardWishList))
+      if (isMatch(profile, hardProfile))
         return (
-        <div key={profile._id} className='match-container' onClick={() => {handleProfileClick(profile._id); changeState('user')}}>
+        <div key={profile._id} className='match-container hover:bg-sky-700' onClick={() => {handleProfileClick(profile._id); changeState('user')}}>
           <div className='profile-username'>
-            <h3>
               {profile.username}
-            </h3>
           </div>
            <div className='profile-gear-list'>
               {profile.gear.map(function(gear) {
                 return (
                   <div key={gear._id}>
-                    {gear.make} {gear.model} <br /> <br />
+                    {gear.make} {gear.model}
+                    <img src={gear.imageURL} alt="" className="h-10 w-10 flex-none bg-gray-50" />
                   </div>
                   )
                 })

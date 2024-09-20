@@ -1,56 +1,24 @@
 /* eslint-disable react/prop-types */
 // import { useEffect, useState } from 'react'
 import NavBar from '../NavBar/NavBar'
+import UserGearList from './UserGearList'
+import UserWishList from './UserWishList'
 import './UsersProfile.css'
 
-export default function UsersProfile ({hardWishList, hardGearList, changeState}) {
+export default function UsersProfile ({hardProfile, changeState}) {
  
 
   return (
     <>
     <NavBar changeState={changeState} />
     <div className='user-profile-container'>
-      <div className='user-gear-container'>
-        <button onClick={() => changeState('newGear')}>Add new owned gear</button>
-        <div className='user-gear-list'>
-        <ul role="list" className="divide-y divide-gray-100">
-          {hardGearList.map((gear) => (
-            <li key={gear.instrument} className="flex justify-between gap-x-6 py-5">
-              <div className="flex min-w-0 gap-x-4">
-                <img alt="" src={gear.imageURL} className="h-12 w-12 flex-none rounded-full bg-gray-50" />
-                <div className="min-w-0 flex-auto">
-                  <p className="text-sm font-semibold leading-6 text-gray-900">{gear.make}</p>
-                  <p className="text-sm font-semibold leading-6 text-gray-500">{gear.model}</p>
-                </div>
-              </div>
-              <div className="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
-                <p className="text-sm leading-6 text-gray-900">{gear.instrument}</p>
-              </div>
-            </li>
-          ))}
-        </ul>
-        </div>
+      <div className='user-gear-container border'>
+        <button onClick={() => changeState('newGear')} className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Add new owned gear</button>
+        <UserGearList hardProfile={hardProfile} />
       </div>
-      <div className='user-wishlist-container'>
-      <button className='' onClick={() => changeState('newWish')}>Add new wish-list item</button>
-        <div className='user-wish-list'>
-          <ul role="list" className="divide-y divide-gray-100">
-            {hardWishList.map((gear) => (
-              <li key={gear.instrument} className="flex justify-between gap-x-6 py-5">
-                <div className="flex min-w-0 gap-x-4">
-                  <img alt="" src={gear.imageURL} className="h-12 w-12 flex-none rounded-full bg-gray-50" />
-                  <div className="min-w-0 flex-auto">
-                    <p className="text-sm font-semibold leading-6 text-gray-900">{gear.make}</p>
-                    <p className="text-sm font-semibold leading-6 text-gray-500">{gear.model}</p>
-                  </div>
-                </div>
-                <div className="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
-                  <p className="text-sm leading-6 text-gray-900">{gear.instrument}</p>
-                </div>
-              </li>
-            ))}
-          </ul>
-        </div>
+      <div className='user-wishlist-container border'>
+        <button onClick={() => changeState('newWish')} className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Add new wish-list item</button>
+       <UserWishList hardProfile={hardProfile}/>
       </div>
     </div>
     </>

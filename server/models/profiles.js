@@ -29,14 +29,25 @@ const updateEmail = async (id, email) => {
   }
 }
 
-const updateNumber = async (id, number) => {
+const updateGear = async (id, gear) => {
   try {
     const profile = await Profile.findById(id);
-    profile.number = number; 
+    profile.gear.push(gear); 
     await profile.save();
   } catch (err) {
     console.error(err);
   }
 }
 
-module.exports = {getAll, addOne, updateEmail, updateNumber};
+const updateWishList = async (id, wishlist) => {
+  try {
+    const profile = await Profile.findById(id);
+    profile.wishlist.push(wishlist); 
+    await profile.save();
+  } catch (err) {
+    console.error(err);
+  }
+}
+
+
+module.exports = {getAll, addOne, updateEmail, updateGear, updateWishList};

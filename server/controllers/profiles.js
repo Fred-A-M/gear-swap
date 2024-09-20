@@ -33,16 +33,29 @@ async function updateProfileEmail (req, res) {
   }
 }
 
-async function updateProfileNumber (req, res) {
+async function updateProfileGear (req, res) {
   try {
     const {id} = req.params;
-    const {number} = req.body;
-    await profiles.updateNumber(id, number);
-    res.status(200).send('Number updated successfully');
+    const {gear} = req.body;
+    await profiles.updateGear(id, gear);
+    res.status(200).send('Gear updated successfully');
   } catch (err) {
     console.log(err);
     res.status(500);
   }
 }
 
-module.exports = { getProfiles, postProfile, updateProfileEmail, updateProfileNumber };
+async function updateProfileWishList (req, res) {
+  try {
+    const {id} = req.params;
+    const {wishlist} = req.body;
+    await profiles.updateWishList(id, wishlist);
+    res.status(200).send('Wishlist updated successfully');
+  } catch (err) {
+    console.log(err);
+    res.status(500);
+  }
+}
+
+
+module.exports = { getProfiles, postProfile, updateProfileEmail, updateProfileGear, updateProfileWishList };
