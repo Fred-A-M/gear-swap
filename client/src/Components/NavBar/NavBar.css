@@ -14,10 +14,6 @@
   border-bottom-left-radius: 15px;
 }
 
-.logo img:hover {
-  cursor: pointer;
-}
-
 .central-nav-items {
   height: 100%;
   display: flex;

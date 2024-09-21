@@ -1,10 +1,18 @@
 const {Request} = require('./dbconnect');
 
+const getAll = async () => {
+  try {
+    let res = await Request.find({});
+    return res;
+  } catch (err) {
+    console.error(err);
+  }
+};
+
 async function sendRequest(senderId, receiverId) {
   try{
     const request = new Request({ senderId, receiverId });
     await request.save();
-    res.status(201).send('Request Added');
   } catch (err) {
     console.error(err);
   }
@@ -21,4 +29,4 @@ async function acceptRequest(requestId) {
   }
 }
 
-module.exports = {sendRequest, acceptRequest};
+module.exports = {sendRequest, acceptRequest, getAll};

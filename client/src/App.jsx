@@ -11,6 +11,7 @@ function App() {
   const [hardProfile, setHardProfile] = useState(profile);
   const [selectedProfileId, setSelectedProfileId] = useState(null);
   const [list, setList] = useState([]);
+  const [requestList, setRequestList] = useState([]);
 
   async function fetchProfiles () {
     try {
@@ -22,8 +23,19 @@ function App() {
     }
   }
 
+  async function fetchRequests () {
+    try {
+      const res = await fetch('http://localhost:3000/requests')
+      const data = await res.json();
+      setRequestList(data);
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
   useEffect(() => {
     fetchProfiles();
+    fetchRequests();
   }, []);
 
   function changeState (newState) {
@@ -40,9 +52,9 @@ function App() {
 
   return (
     <>
-    {state === 'home' && <Home hardProfile={hardProfile} changeState={changeState} handleProfileClick={handleProfileClick} list={list}/>}
+    {state === 'home' && <Home hardProfile={hardProfile} changeState={changeState} handleProfileClick={handleProfileClick} list={list} fetchRequests={fetchRequests} />}
     {state === 'profile' && <UsersProfile changeState={changeState} hardProfile={hardProfile}/>}
-    {state === 'user' && <OtherUser changeState={changeState} selectedProfileId={selectedProfileId} list={list} />}
+    {state === 'user' && <OtherUser changeState={changeState} selectedProfileId={selectedProfileId} list={list} hardProfile={hardProfile} requestList={requestList} fetchRequests={fetchRequests} />}
     {state === 'newGear' && <NewGearForm state={state} changeState={changeState} changeProfile={changeProfile} hardProfile={hardProfile} fetchProfiles={fetchProfiles} />}
     {state === 'newWish' && <NewGearForm state={state} changeState={changeState} changeProfile={changeProfile} hardProfile={hardProfile} fetchProfiles={fetchProfiles} />}
     </>

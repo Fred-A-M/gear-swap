@@ -6,8 +6,7 @@ export default function MatchedProfiles ({profileList, hardProfile, changeState,
   function isMatch (user, wish) {
     return user.gear.some(gearItem => {
       return wish.wishlist.some(wishItem => {
-        if (gearItem.instrument === wishItem.instrument &&
-        gearItem.make === wishItem.make &&
+        if (gearItem.make === wishItem.make &&
         gearItem.model === wishItem.model)
         return true;
       });

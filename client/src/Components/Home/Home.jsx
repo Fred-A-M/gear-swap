@@ -2,11 +2,15 @@
 import NavBar from '../NavBar/NavBar'
 import DiscoverProfiles from '../DiscoverProfiles/DiscoverProfiles'
 import MatchedProfiles from '../MatchedProfiles/MatchedProfiles'
+import { useEffect } from 'react'
 import './Home.css'
 
-export default function Home ({hardProfile, changeState, handleProfileClick, list}) {
-  console.log(hardProfile);
-  
+export default function Home ({hardProfile, changeState, handleProfileClick, list, fetchRequests}) {
+
+  useEffect(() =>{
+    fetchRequests();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <>
