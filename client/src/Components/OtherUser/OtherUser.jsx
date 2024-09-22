@@ -3,7 +3,6 @@
 import GearList from '../GearList/GearList';
 import WishList from '../GearList/WishList';
 import ContactDetails from './ContactDetails';
-import './OtherUser.css'
 import { useState } from 'react';
 
 export default function OtherUser ({selectedProfileId, list, hardProfile, requestList, fetchRequests, selectedRequestId}) {
@@ -111,11 +110,11 @@ export default function OtherUser ({selectedProfileId, list, hardProfile, reques
         : <button onClick={requestButton} className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">Request contact details</button> }
       </div>
     </div>
-    <div className='other-profile-container'>
-      <div className='other-gear-container border'>
+    <div className='other-profile-container flex h-max'>
+      <div className='other-gear-container border flex-1 m-3'>
        <GearList selectedProfile={selectedProfile}/>
       </div>
-      <div className='user-wishlist-container border'>
+      <div className='user-wishlist-container border flex-1 m-3'>
         <WishList selectedProfile={selectedProfile} />
       </div>
     </div>

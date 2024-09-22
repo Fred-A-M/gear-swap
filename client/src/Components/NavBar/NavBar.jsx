@@ -1,5 +1,4 @@
 /* eslint-disable react/prop-types */
-import './NavBar.css'
 
 export default function NavBar ({changeState, requestList, hardProfile, handleModal}) {
 
@@ -16,21 +15,21 @@ export default function NavBar ({changeState, requestList, hardProfile, handleMo
 
   return (
     <>
-    <div className='nav-bar-container' >
-      <div className='left-nav-items flex content-center'>
+    <div className='nav-bar-container h-16 w-full flex justify-between mb-3 bg-orange-400 fixed z-50' >
+      <div className='left-nav-items flex h-full items-center pl-3'>
         <div className='logo hover:cursor-pointer'>
-          <img className='rounded-full' src="./src/assets/logo2.jpeg" alt="logo" onClick={() => changeState('home')}/>
+          <img className='rounded-full max-h-11' src="./src/assets/logo2.jpeg" alt="logo" onClick={() => changeState('home')}/>
         </div>
 
       </div>
-      <div className='central-nav-items'>
+      <div className='central-nav-items h-full flex items-center'>
         <div>
           <form className='search-bar' >
-            <input type="text" className='input-field' autoComplete='off' placeholder='Search...' />
+            <input type="text" className='input-field h-9 rounded-xl' autoComplete='off' placeholder='Search...' />
           </form>
         </div>
       </div>
-      <div className='right-nav-items'>
+      <div className='right-nav-items flex h-full items-center pr-3'>
       <div onClick={() => handleModal('requests')} className='notfication-bell mx-2 hover:cursor-pointer'>
         {doesUserHavePendingRequests() ?
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-9">

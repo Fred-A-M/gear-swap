@@ -72,21 +72,23 @@ function App() {
   return (
     <>
     <NavBar changeState={changeState} requestList={requestList} hardProfile={hardProfile} handleModal={handleModal} />
-    {state === 'home' && <Home hardProfile={hardProfile} changeState={changeState} handleProfileClick={handleProfileClick} list={list} fetchRequests={fetchRequests} />}
-    {state === 'profile' && <UsersProfile hardProfile={hardProfile} fetchRequests={fetchRequests} handleModal={handleModal}/>}
-    {state === 'user' && <OtherUser selectedProfileId={selectedProfileId} list={list} hardProfile={hardProfile} requestList={requestList} fetchRequests={fetchRequests} selectedRequestId={selectedRequestId} />}
+    <div className='pt-16'>
+      {state === 'home' && <Home hardProfile={hardProfile} changeState={changeState} handleProfileClick={handleProfileClick} list={list} fetchRequests={fetchRequests} />}
+      {state === 'profile' && <UsersProfile hardProfile={hardProfile} fetchRequests={fetchRequests} handleModal={handleModal}/>}
+      {state === 'user' && <OtherUser selectedProfileId={selectedProfileId} list={list} hardProfile={hardProfile} requestList={requestList} fetchRequests={fetchRequests} selectedRequestId={selectedRequestId} />}
 
-    <Modal isVisible={isModalVisible} onClose={() => setIsModalVisible(false)}>
-      {modalContent === 'requests' && (
-        <RequestsPage onClose={() => setIsModalVisible(false)} requestList={requestList} list={list} hardProfile={hardProfile} changeState={changeState} handleProfileClick={handleProfileClick} handleRequestClick={handleRequestClick} stopModal={stopModal}/>
-      )}
-      {modalContent === 'newGear' && (
-        <NewGearForm onClose={() => setIsModalVisible(false)} changeProfile={changeProfile} hardProfile={hardProfile} fetchProfiles={fetchProfiles} handleModal={handleModal} stopModal={stopModal} modalContent={modalContent}/>
-      )}
-      {modalContent === 'newWish' && (
-        <NewGearForm onClose={() => setIsModalVisible(false)} changeProfile={changeProfile} hardProfile={hardProfile} fetchProfiles={fetchProfiles} handleModal={handleModal} stopModal={stopModal} modalContent={modalContent}/>
-      )}
-    </Modal>
+      <Modal isVisible={isModalVisible} onClose={() => setIsModalVisible(false)}>
+        {modalContent === 'requests' && (
+          <RequestsPage onClose={() => setIsModalVisible(false)} requestList={requestList} list={list} hardProfile={hardProfile} changeState={changeState} handleProfileClick={handleProfileClick} handleRequestClick={handleRequestClick} stopModal={stopModal}/>
+        )}
+        {modalContent === 'newGear' && (
+          <NewGearForm onClose={() => setIsModalVisible(false)} changeProfile={changeProfile} hardProfile={hardProfile} fetchProfiles={fetchProfiles} handleModal={handleModal} stopModal={stopModal} modalContent={modalContent}/>
+        )}
+        {modalContent === 'newWish' && (
+          <NewGearForm onClose={() => setIsModalVisible(false)} changeProfile={changeProfile} hardProfile={hardProfile} fetchProfiles={fetchProfiles} handleModal={handleModal} stopModal={stopModal} modalContent={modalContent}/>
+        )}
+      </Modal>
+    </div>
     </>
   )
 }
