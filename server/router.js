@@ -27,6 +27,9 @@ router.route('/requests/send')
 router.route('/requests/:id/accept')
 .put(requests.acceptRequest)
 
+router.route('/requests/:id/reject')
+.put(requests.rejectRequest)
+
 //Gear
 // router.route('/gear') 
 // .get(gear.getGear)

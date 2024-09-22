@@ -29,4 +29,13 @@ async function acceptRequest(requestId) {
   }
 }
 
-module.exports = {sendRequest, acceptRequest, getAll};
+async function deleteRequest(requestId) {
+  try{
+    // await Request.findByIdAndUpdate(requestId, {status: 'accepted'});
+    await Request.deleteOne({_id: requestId});
+  } catch (err) {
+    console.error(err);
+  }
+}
+
+module.exports = {sendRequest, acceptRequest, getAll, deleteRequest};

@@ -1,8 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useState } from 'react'
-import './NewGearForm.css'
 
-export default function NewGearForm ({changeState, state, changeProfile, hardProfile, fetchProfiles}) {
+export default function NewGearForm ({changeProfile, hardProfile, fetchProfiles, stopModal, modalContent}) {
   const [instrumentValue, setInstrumentValue] = useState('');
   const [makeValue, setMakeValue] = useState('');
   const [modelValue, setModelValue] = useState('');
@@ -24,13 +23,13 @@ export default function NewGearForm ({changeState, state, changeProfile, hardPro
     make: make,
     model: model
    };
-   if (state === 'newGear') {
+   if (modalContent === 'newGear') {
      changeProfile((previousProfile) => ({
       ...previousProfile,
       gear: [...previousProfile.gear, newGear]
     }));
    }
-   if (state === 'newWish') {
+   if (modalContent === 'newWish') {
     changeProfile((previousProfile) => ({
       ...previousProfile,
       wishlist: [...previousProfile.wishlist, newGear]
@@ -39,7 +38,7 @@ export default function NewGearForm ({changeState, state, changeProfile, hardPro
   }
 
   async function createNewGearDB (id, instrument, make, model) {
-    if (state === 'newGear') {
+    if (modalContent === 'newGear') {
       await fetch(`http://localhost:3000/profiles/${id}/gear`, {
          method: 'PUT',
          headers: {
@@ -48,7 +47,7 @@ export default function NewGearForm ({changeState, state, changeProfile, hardPro
          body: JSON.stringify({gear: {instrument, make, model}}),
        })
     }
-    if (state === 'newWish') {
+    if (modalContent === 'newWish') {
       await fetch(`http://localhost:3000/profiles/${id}/wishlist`, {
         method: 'PUT',
         headers: {
@@ -66,8 +65,8 @@ export default function NewGearForm ({changeState, state, changeProfile, hardPro
       setInstrumentValue('');
       setMakeValue('');
       setModelValue('');
-      changeState('profile');
       fetchProfiles();
+      stopModal();
   }
 
   return (

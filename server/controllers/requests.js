@@ -24,7 +24,7 @@ async function sendRequest (req, res) {
 
 async function acceptRequest (req, res) {
   try {
-    await requests.acceptRequest(req.body); // try res.body or req.params?
+    await requests.acceptRequest(req.params.id); 
     res.status(201).send('Request accepted');
   } catch (err) {
     console.log(err);
@@ -32,4 +32,14 @@ async function acceptRequest (req, res) {
   }
 }
 
-module.exports = {sendRequest, acceptRequest, getRequests}
+async function rejectRequest (req, res) {
+  try {
+    await requests.deleteRequest(req.params.id);
+    res.status(201).send('Request rejected');
+  } catch (err) {
+    console.log(err);
+    res.status(500);
+  }
+}
+
+module.exports = {sendRequest, acceptRequest, getRequests, rejectRequest}
