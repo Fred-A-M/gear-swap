@@ -37,6 +37,10 @@ const profileSchema = new mongoose.Schema({
     type: Number,
     required: true
   },
+  location: {
+    type: String,
+    required: true
+  },
   imageURL: {
     type: String,
     required: false
@@ -64,7 +68,7 @@ const requestSchema = new mongoose.Schema({
   },
   status: {
     type: String,
-    enum: ['pending', 'accepted', 'rejected'],
+    enum: ['pending', 'accepted'],
     default: 'pending'
   },
   createdAt: {

@@ -7,6 +7,7 @@ const profiles = [
     username: 'JamDonut97',
     email: 'jammyd@gmail.com',
     number: 7893321456,
+    location: 'London',
     gear: [
       {
         instrument: 'Electric Guitar',
@@ -52,6 +53,7 @@ const profiles = [
     username: 'KingWillis',
     email: 'KW1934@gmail.com',
     number: 740440046,
+    location: 'London',
     gear: [
       {
         instrument: 'Microphone',
@@ -79,6 +81,7 @@ const profiles = [
     username: 'SoundWave23',
     email: 'wave23@musicmail.com',
     number: 7892123456,
+    location: 'London',
     gear: [
       {
         instrument: 'Synthesizer',
@@ -106,6 +109,7 @@ const profiles = [
     username: 'IEatGreggs58',
     email: 'groovem@musician.net',
     number: 7881231234,
+    location: 'London',
     gear: [
       {
         instrument: 'DJ Controller',
@@ -133,6 +137,7 @@ const profiles = [
     username: 'VinylVicky',
     email: 'vibesvinyl@beats.com',
     number: 7976543210,
+    location: 'London',
     gear: [
       {
         instrument: 'Sampler',
@@ -166,6 +171,7 @@ const profiles = [
     username: 'EchoesX',
     email: 'echoesx@loops.net',
     number: 7492342345,
+    location: 'Manchester',
     gear: [
       {
         instrument: 'Drum Machine',
@@ -193,6 +199,7 @@ const profiles = [
     username: 'SmellySocks88',
     email: 'wavjunkie@beatsource.com',
     number: 7984562312,
+    location: 'London',
     gear: [
       {
         instrument: 'Bass Guitar',
@@ -222,6 +229,7 @@ const profiles = [
     username: 'SynthKnight',
     email: 'synthknight@loopmail.com',
     number: 7355676345,
+    location: 'Bristol',
     gear: [
       {
         instrument: 'Synthesizer',
@@ -256,6 +264,7 @@ const profiles = [
     username: 'BeatChef',
     email: 'beatchef@mixmasters.com',
     number: 7676543213,
+    location: 'Sheffield',
     gear: [
       {
         instrument: 'Turntable',
@@ -280,6 +289,7 @@ const profiles = [
     username: 'SneakyDave',
     email: 'bassb@loopaudio.com',
     number: 7234321123,
+    location: 'London',
     gear: [
       {
         instrument: 'Bass Guitar',
@@ -304,6 +314,7 @@ const profiles = [
     username: 'RetroBruce',
     email: 'retrobeat@disco.net',
     number: 7123456789,
+    location: 'London',
     gear: [
       {
         instrument: 'Synthesizer',
@@ -337,6 +348,7 @@ const profiles = [
     username: 'FishSticks93',
     email: 'funkyv@musicnow.com',
     number: 7893456789,
+    location: 'London',
     gear: [
       {
         instrument: 'Keyboard',
@@ -366,6 +378,7 @@ const profiles = [
     username: 'HeavyRiffs',
     email: 'heavyriffs@metalmail.com',
     number: 7234567891,
+    location: 'Manchester',
     gear: [
       {
         instrument: 'Electric Guitar',
@@ -393,6 +406,7 @@ const profiles = [
     username: 'TurkeyTwizzler',
     email: 'chillbeats@relax.com',
     number: 7345678912,
+    location: 'London',
     gear: [
       {
         instrument: 'Drum Machine',
@@ -417,6 +431,7 @@ const profiles = [
     username: 'LoopLabJohn',
     email: 'looplab@sonicmail.com',
     number: 7456789123,
+    location: 'Sheffield',
     gear: [
       {
         instrument: 'Looper Pedal',
@@ -441,6 +456,7 @@ const profiles = [
     username: 'AcousticSoul',
     email: 'acousticsoul@strum.com',
     number: 7567891234,
+    location: 'Bristol',
     gear: [
       {
         instrument: 'Acoustic Guitar',
@@ -465,6 +481,7 @@ const profiles = [
     username: 'ModularMind',
     email: 'modular@patchcable.com',
     number: 7678912345,
+    location: 'Manchester',
     gear: [
       {
         instrument: 'Modular Synth',
@@ -489,6 +506,7 @@ const profiles = [
     username: 'PercMaster',
     email: 'percmaster@drumloop.com',
     number: 7789123456,
+    location: 'London',
     gear: [
       {
         instrument: 'Electronic Drum Kit',
@@ -508,6 +526,7 @@ const profiles = [
     username: 'MixKing',
     email: 'mixking@beatmail.com',
     number: 7984562123,
+    location: 'Bristol',
     gear: [
       {
         instrument: 'DJ Controller',
@@ -532,6 +551,7 @@ const profiles = [
     username: 'LofiLord',
     email: 'lofiking@chill.com',
     number: 7893456213,
+    location: 'Bristol',
     gear: [
       {
         instrument: 'Sampler',
@@ -561,6 +581,7 @@ const profiles = [
     username: 'BassMonkey',
     email: 'bassmonkey@deepbass.com',
     number: 7912345678,
+    location: 'London',
     gear: [
       {
         instrument: 'Bass Guitar',
@@ -585,6 +606,7 @@ const profiles = [
     username: 'ToneWizard',
     email: 'tonewizard@soundmail.com',
     number: 7654321234,
+    location: 'Manchester',
     gear: [
       {
         instrument: 'Electric Guitar',
@@ -612,6 +634,7 @@ const profiles = [
     username: 'AnalogAddict',
     email: 'analogaddict@retrogear.com',
     number: 7489321456,
+    location: 'London',
     gear: [
       {
         instrument: 'Synthesizer',
@@ -639,6 +662,7 @@ const profiles = [
     username: 'BeatBender',
     email: 'beatbender@loopmasters.com',
     number: 7123456891,
+    location: 'Sheffield',
     gear: [
       {
         instrument: 'Turntable',
@@ -663,6 +687,7 @@ const profiles = [
     username: 'SonicWarrior',
     email: 'sonicwarrior@warpsound.com',
     number: 7345678912,
+    location: 'London',
     gear: [
       {
         instrument: 'Electric Guitar',
@@ -687,6 +712,7 @@ const profiles = [
     username: 'LoopFreak',
     email: 'loopfreak@loopy.com',
     number: 7890345678,
+    location: 'Bristol',
     gear: [
       {
         instrument: 'Looper Pedal',
@@ -703,9 +729,10 @@ const profiles = [
     ]
   },
   {
-    username: 'GroovePilot',
+    username: 'SnotPilot',
     email: 'groovepilot@beats.com',
     number: '07564578923',
+    location: 'London',
     gear: [
       {
         instrument: 'Drum Machine',
@@ -725,6 +752,7 @@ const profiles = [
     username: 'NoiseCraft',
     email: 'noisecraft@sonicboom.com',
     number: 7856341278,
+    location: 'Manchester',
     gear: [
       {
         instrument: 'Modular Synth',
@@ -744,6 +772,7 @@ const profiles = [
     username: 'DrumLord',
     email: 'drumlord@rhythmbox.com',
     number: 7623456789,
+    location: 'London',
     gear: [
       {
         instrument: 'Electronic Drum Kit',
@@ -763,6 +792,7 @@ const profiles = [
     username: 'EchoStation',
     email: 'echostation@reverbradio.com',
     number: 7856723489,
+    location: 'Bristol',
     gear: [
       {
         instrument: 'Reverb Pedal',
@@ -779,9 +809,10 @@ const profiles = [
     ]
   },
   {
-    username: 'BassCaptain',
+    username: 'FleshCaptain02',
     email: 'basscaptain@deepgrooves.com',
     number: 7783456213,
+    location: 'London',
     gear: [
       {
         instrument: 'Bass Guitar',
@@ -806,6 +837,7 @@ const profiles = [
     username: 'SpaceChords',
     email: 'spacechords@cosmicmail.com',
     number: 7234512312,
+    location: 'Sheffield',
     gear: [
       {
         instrument: 'Synthesizer',
@@ -830,6 +862,7 @@ const profiles = [
     username: 'TapeDeckHero',
     email: 'tapedeckhero@analog.com',
     number: 7956723489,
+    location: 'London',
     gear: [
       {
         instrument: 'Tape Recorder',
@@ -849,6 +882,7 @@ const profiles = [
     username: 'ChillGuitar',
     email: 'chillguitar@harmony.com',
     number: 7893451234,
+    location: 'Bristol',
     gear: [
       {
         instrument: 'Acoustic Guitar',
@@ -868,6 +902,7 @@ const profiles = [
     username: 'GrooveCrafter',
     email: 'groovecrafter@beats.com',
     number: 7345678912,
+    location: 'London',
     gear: [
       {
         instrument: 'DJ Controller',
@@ -887,6 +922,7 @@ const profiles = [
     username: 'ModularMind2',
     email: 'modular2@patchcable.com',
     number: 7567893412,
+    location: 'Manchester',
     gear: [
       {
         instrument: 'Modular Synth',
@@ -911,6 +947,7 @@ const profiles = [
     username: 'VinylJunkie',
     email: 'vinyljunkie@spinmail.com',
     number: 7123456789,
+    location: 'London',
     gear: [
       {
         instrument: 'Turntable',
@@ -930,6 +967,7 @@ const profiles = [
     username: 'Dreamscaper',
     email: 'dreamscaper@soundmail.com',
     number: 7234678923,
+    location: 'Sheffield',
     gear: [
       {
         instrument: 'Synthesizer',

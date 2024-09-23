@@ -18,7 +18,7 @@ export default function DiscoverProfiles ({profileList, handleProfileClick, chan
                 {profile.username}
             </div> <br />
             <div className='profile-gear-list self-center'>
-                <PhotoCarousel usersPhotos={profile.gear}/>
+                <PhotoCarousel usersGear={profile.gear}/>
               </div>
             </div>
         )

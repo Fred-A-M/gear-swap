@@ -19,7 +19,9 @@ export default function RequestsPage ({requestList, list, hardProfile, handlePro
     <>
     <div className='flex justify-center'>
       <div>
-        <table className="table-auto border-collapse border border-gray-300">
+        {newUsersRequests.length > 0 ? (
+
+          <table className="table-auto border-collapse border border-gray-300">
           <thead>
             <tr>
               <th className="border border-gray-300 px-4 py-2 min-w-80">User</th>
@@ -37,6 +39,9 @@ export default function RequestsPage ({requestList, list, hardProfile, handlePro
             })}
           </tbody>
         </table>
+        ) : (
+          <p className="text-center font-medium text-gray-500">No requests to display</p>
+        )}
       </div>
     </div>
     </>

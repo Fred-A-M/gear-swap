@@ -1,3 +1,28 @@
+//Fetch functions
+export function sendRequest(senderId, receiverId) {
+  fetch('http://localhost:3000/requests/send', {
+    method: 'POST',
+    body: JSON.stringify({ senderId, receiverId }),
+    headers: { 'Content-Type': 'application/json' }
+  });
+}
+
+export async function acceptRequest(requestId) {
+  await fetch(`http://localhost:3000/requests/${requestId}/accept`, {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json' }
+  });
+}
+
+export async function rejectRequest(requestId) {
+  await fetch(`http://localhost:3000/requests/${requestId}/reject`, {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json' }
+  });
+}
+
+
+//Mock profile
 export const profile = {
   _id: '66ed71f65e2e1a631b4b4011',
   username: 'JamDonut97',

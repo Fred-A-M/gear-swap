@@ -8,6 +8,7 @@ import OtherUser from './Components/OtherUser/OtherUser';
 import RequestsPage from './Components/RequestsPage/RequestsPage';
 import NavBar from './Components/NavBar/NavBar';
 import Modal from './Components/Modal/Modal';
+import FriendsPage from './Components/FriendsPage/FriendsPage';
 
 function App() {
   const [state, setState] = useState('home');
@@ -18,6 +19,7 @@ function App() {
   const [requestList, setRequestList] = useState([]);
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [modalContent, setModalContent] = useState(null);
+  const [locationFilter, setLocationFilter] = useState('');
 
   async function fetchProfiles () {
     try {
@@ -44,6 +46,7 @@ function App() {
     fetchRequests();
   }, []);
 
+
   function changeState (newState) {
     setState(newState);
   }
@@ -59,6 +62,11 @@ function App() {
   function handleRequestClick (id) {
     setSelectedRequestId(id);
   }
+  
+  function changeLocation (event) {
+    const location = event.target.value;
+    setLocationFilter(location);
+  }
 
   function handleModal (content) {
     setModalContent(content)
@@ -71,11 +79,12 @@ function App() {
 
   return (
     <>
-    <NavBar changeState={changeState} requestList={requestList} hardProfile={hardProfile} handleModal={handleModal} />
+    <NavBar changeState={changeState} requestList={requestList} hardProfile={hardProfile} handleModal={handleModal} fetchRequests={fetchRequests} list={list} changeLocation={changeLocation} />
     <div className='pt-16'>
-      {state === 'home' && <Home hardProfile={hardProfile} changeState={changeState} handleProfileClick={handleProfileClick} list={list} fetchRequests={fetchRequests} />}
-      {state === 'profile' && <UsersProfile hardProfile={hardProfile} fetchRequests={fetchRequests} handleModal={handleModal}/>}
+      {state === 'home' && <Home hardProfile={hardProfile} changeState={changeState} handleProfileClick={handleProfileClick} list={list} fetchRequests={fetchRequests} locationFilter={locationFilter} />}
+      {state === 'profile' && <UsersProfile hardProfile={hardProfile} handleModal={handleModal}/>}
       {state === 'user' && <OtherUser selectedProfileId={selectedProfileId} list={list} hardProfile={hardProfile} requestList={requestList} fetchRequests={fetchRequests} selectedRequestId={selectedRequestId} />}
+      {state === 'friends' && <FriendsPage requestList={requestList} list={list} hardProfile={hardProfile} handleProfileClick={handleProfileClick} changeState={changeState} fetchRequests={fetchRequests} />}
 
       <Modal isVisible={isModalVisible} onClose={() => setIsModalVisible(false)}>
         {modalContent === 'requests' && (

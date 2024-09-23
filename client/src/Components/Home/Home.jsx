@@ -4,7 +4,7 @@ import MatchedProfiles from '../MatchedProfiles/MatchedProfiles'
 import { useEffect } from 'react'
 
 
-export default function Home ({hardProfile, changeState, handleProfileClick, list, fetchRequests}) {
+export default function Home ({hardProfile, changeState, handleProfileClick, list, fetchRequests, locationFilter}) {
 
   useEffect(() =>{
     fetchRequests();
@@ -13,8 +13,8 @@ export default function Home ({hardProfile, changeState, handleProfileClick, lis
 
   return (
     <>
-    <MatchedProfiles profileList={list} hardProfile={hardProfile} changeState={changeState} handleProfileClick={handleProfileClick} />
-    <DiscoverProfiles profileList={list} changeState={changeState} handleProfileClick={handleProfileClick} />
+    <MatchedProfiles profileList={list} hardProfile={hardProfile} changeState={changeState} handleProfileClick={handleProfileClick} locationFilter={locationFilter} />
+    <DiscoverProfiles profileList={list} changeState={changeState} handleProfileClick={handleProfileClick} locationFilter={locationFilter} />
     </>
   )
 }
