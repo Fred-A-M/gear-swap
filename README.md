@@ -1,5 +1,4 @@
 # GearSwap
-# Music Gear Swap App
 
 ## Description
 
