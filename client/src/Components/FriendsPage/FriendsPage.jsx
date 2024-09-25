@@ -25,7 +25,7 @@ export default function FriendsPage ({requestList, list, hardProfile, handleProf
 
   return (
     <>
-    <div className='flex justify-center mt-8 h-lvh'>
+    <div className='flex justify-center mt-8'>
       {friends.length === 0 ? <table className="table-auto w-4/5 min-w-80 h-24 transition duration-300 mb-8 drop-shadow-2xl p-6 rounded-2xl">
           <thead>
             <tr className='bg-orange-300'>

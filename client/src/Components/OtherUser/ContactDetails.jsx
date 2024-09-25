@@ -3,7 +3,7 @@ export default function ContactDetails ({selectedProfile}) {
 
   return (
     <>
-    <table className="table-auto border-collapse">
+    <table className="table-auto border-collapse mb-5">
       <thead>
         <tr className='bg-orange-300 text-center'>
           <th className=" px-4 py-2 min-w-80 rounded-tl-2xl">Email</th>

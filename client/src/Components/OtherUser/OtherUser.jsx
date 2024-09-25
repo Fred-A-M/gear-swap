@@ -93,7 +93,7 @@ export default function OtherUser ({selectedProfileId, list, hardProfile, reques
 
   return (
     <>
-    <div className='h-lvh mt-6'>
+    <div className='mt-6'>
       <div className='text-center'>
         <p className='text-2xl underline font-bold'>{selectedProfile.username}</p> <br />
         <div className='flex justify-center text-left'>

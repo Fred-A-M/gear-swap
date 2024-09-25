@@ -80,11 +80,10 @@ function App() {
 
   return (
     <>
-    {state === 'login' && <LoginPage changeState={changeState} />}
-
-    
+    {state === 'login' ? <LoginPage changeState={changeState} /> : 
+    <>
     <NavBar changeState={changeState} requestList={requestList} hardProfile={hardProfile} handleModal={handleModal} fetchRequests={fetchRequests} list={list} changeLocation={changeLocation} />
-    <div className='pt-16 bg-yellow-50'>
+    <div className='pt-16'>
       {state === 'home' && <Home hardProfile={hardProfile} changeState={changeState} handleProfileClick={handleProfileClick} list={list} fetchRequests={fetchRequests} locationFilter={locationFilter} />}
       {state === 'profile' && <UsersProfile hardProfile={hardProfile} handleModal={handleModal} fetchProfiles={fetchProfiles} changeProfile={changeProfile} />}
       {state === 'user' && <OtherUser selectedProfileId={selectedProfileId} list={list} hardProfile={hardProfile} requestList={requestList} fetchRequests={fetchRequests} selectedRequestId={selectedRequestId} changeProfile={changeProfile} fetchProfiles={fetchProfiles} />}
@@ -102,6 +101,8 @@ function App() {
         )}
       </Modal>
     </div>
+    </>
+    }
     </>
   )
 }
