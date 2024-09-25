@@ -49,5 +49,27 @@ const updateWishList = async (id, wishlist) => {
   }
 }
 
+const deleteGear = async (id, gearId) => {
+  try {
+    await Profile.updateOne(
+      { _id: id },
+      { $pull: { gear: { _id: gearId } } }
+    );
+  } catch (err) {
+    console.error(err);
+  }
+}
 
-module.exports = {getAll, addOne, updateEmail, updateGear, updateWishList};
+const deleteWish = async (id, gearId) => {
+  try {
+    await Profile.updateOne(
+      { _id: id },
+      { $pull: { wishlist: { model: gearId } } }
+    );
+  } catch (err) {
+    console.error(err);
+  }
+}
+
+
+module.exports = {getAll, addOne, updateEmail, updateGear, updateWishList, deleteGear, deleteWish};

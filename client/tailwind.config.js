@@ -6,6 +6,12 @@ export default {
   ],
   theme: {
     extend: { 
+      maxHeight: {
+        'custom-max': '500px'
+      },
+      minHeight: {
+        'custom-min': '500px'
+      },
       colors: {
         base: '#ff9735',
         basehover: '#ff830d'

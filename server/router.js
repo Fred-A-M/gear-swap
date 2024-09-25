@@ -17,6 +17,12 @@ router.route('/profiles/:id/gear')
 router.route('/profiles/:id/wishlist') 
 .put(profiles.updateProfileWishList)
 
+router.route('/profiles/:id/gear/delete')
+.put(profiles.deleteProfileGear)
+
+router.route('/profiles/:id/wishlist/delete') 
+.put(profiles.deleteProfileWish)
+
 //Requests
 router.route('/requests')
 .get(requests.getRequests)
@@ -29,11 +35,6 @@ router.route('/requests/:id/accept')
 
 router.route('/requests/:id/reject')
 .put(requests.rejectRequest)
-
-//Gear
-// router.route('/gear') 
-// .get(gear.getGear)
-// .post(gear.postGear)
 
 
 module.exports = router;

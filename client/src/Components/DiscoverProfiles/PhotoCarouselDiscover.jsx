@@ -21,8 +21,8 @@ export default function PhotoCarousel ({usersGear}) {
   return (
     <>
     <div className="relative w-full max-w-lg mx-auto">
-      {!photos[currentIndex] ? <img src='/src/assets/logo2.jpeg' className="w-32 h-32 rounded-full shadow-md"/> :
-      <img src={photos[currentIndex]} className="w-32 h-32 rounded-lg shadow-md"/>}
+      {!photos[currentIndex] ? <img src='/src/assets/logo2.jpeg' className="w-44 h-44 rounded-full shadow-md"/> :
+      <img src={photos[currentIndex]} className="w-44 h-44 rounded-lg shadow-md"/>}
       {photos.length > 1 && <>
       <button onClick={prevImage} className="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white rounded-full shadow-md p-1 hover:bg-gray-100">
       &#10094;

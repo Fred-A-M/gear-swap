@@ -20,27 +20,32 @@ export default function RequestsPage ({requestList, list, hardProfile, handlePro
     <div className='flex justify-center'>
       <div>
         {newUsersRequests.length > 0 ? (
-
-          <table className="table-auto border-collapse border border-gray-300">
-          <thead>
+          <table className="table-auto border-collapse">
+          <thead className=' bg-orange-300'>
             <tr>
-              <th className="border border-gray-300 px-4 py-2 min-w-80">User</th>
-              <th className="border border-gray-300 px-4 py-2 min-w-80">Request Date</th>
+              <th className=" px-4 py-2 min-w-80 rounded-tl-2xl">User</th>
+              <th className=" px-4 py-2 min-w-80 rounded-tr-2xl">Request Date</th>
             </tr>
           </thead>
           <tbody>
-            {newUsersRequests.map(function(request) {
+            {newUsersRequests.map(function(request, index) {
+              const isLastRow = index === newUsersRequests.length - 1;
               return (
-                <tr key={request._id}>
-                <td onClick={() => {handleProfileClick(request.senderId); changeState('user'); handleRequestClick(request._id); stopModal()}} className="border border-gray-300 px-4 py-2 min-w-80 font-bold hover:cursor-pointer">{request.username}</td>
-                <td className="border border-gray-300 px-4 py-2 min-w-80">{moment(request.createdAt).format('MMMM Do YYYY - h:mma')}</td>
+                <tr onClick={() => {handleProfileClick(request.senderId); changeState('user'); handleRequestClick(request._id); stopModal()}} key={request._id} className=' hover:cursor-pointer bg-orange-50 hover:bg-orange-100 text-center'>
+                <td className={`${isLastRow ? 'rounded-bl-2xl' : ''} px-4 py-2 min-w-80 font-bold `}>{request.username}</td>
+                <td className={`${isLastRow ? 'rounded-br-2xl' : ''} px-4 py-2 min-w-80`}>{moment(request.createdAt).format('MMMM Do YYYY - h:mma')}</td>
               </tr>
               )
             })}
           </tbody>
         </table>
         ) : (
-          <p className="text-center font-medium text-gray-500">No requests to display</p>
+          <table className="table-auto border-collapse">
+          <thead className=' bg-orange-400'>
+            <tr>
+              <th className=" px-4 py-2 min-w-80 rounded-2xl text-white">No Requests to Display</th>
+            </tr>
+          </thead></table>
         )}
       </div>
     </div>

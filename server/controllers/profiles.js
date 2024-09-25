@@ -57,5 +57,29 @@ async function updateProfileWishList (req, res) {
   }
 }
 
+async function deleteProfileGear (req, res) {
+  try {
+    const {id} = req.params;
+    const {gearId} = req.body;
+    await profiles.deleteGear(id, gearId);
+    res.status(200).send('Gear deleted successfully');
+  } catch (err) {
+    console.log(err);
+    res.status(500);
+  }
+}
 
-module.exports = { getProfiles, postProfile, updateProfileEmail, updateProfileGear, updateProfileWishList };
+async function deleteProfileWish (req, res) {
+  try {
+    const {id} = req.params;
+    const {gearId} = req.body;
+    await profiles.deleteWish(id, gearId);
+    res.status(200).send('Wish deleted successfully');
+  } catch (err) {
+    console.log(err);
+    res.status(500);
+  }
+}
+
+
+module.exports = { getProfiles, postProfile, updateProfileEmail, updateProfileGear, updateProfileWishList, deleteProfileGear, deleteProfileWish };

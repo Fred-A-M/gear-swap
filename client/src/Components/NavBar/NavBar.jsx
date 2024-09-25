@@ -36,7 +36,7 @@ export default function NavBar ({changeState, requestList, hardProfile, handleMo
       </div>
       <div className='central-nav-items flex items-center absolute left-1/2 transform -translate-x-1/2'>
         <div>
-          <select onChange={changeLocation} className='search-bar h-9 w-52 rounded-xl' >
+          <select onChange={changeLocation} className='search-bar h-9 w-52 rounded-xl bg-yellow-50 text-center' >
           <option value="">All Locations</option>
             {locations.map((location) => (
               <option key={location}>
