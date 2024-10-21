@@ -95,8 +95,8 @@ export default function OtherUser ({selectedProfileId, list, hardProfile, reques
     <>
     <div className='mt-6'>
       <div className='text-center'>
-        <p className='text-2xl underline font-bold text-background p-1 bg-boxes rounded-2xl w-52 mt-6 mb-4 mx-auto'>{selectedProfile.username}</p> <br />
-        <div className='flex justify-center text-left'>
+        <p className='text-2xl underline font-bold text-background p-1 bg-boxes rounded-2xl w-52 mt-6 mb-1 mx-auto'>{selectedProfile.username}</p> <br />
+        <div className='flex justify-center text-left mb-3'>
           {isRequestAccepted() || isExternalRequestAccepted() ? <ContactDetails selectedProfile={selectedProfile}/>
           : isUserRequestPending() || requestSent ? <button className="text-white bg-gray-500 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 cursor-not-allowed opacity-50">Request pending</button>
           : isExternalRequestPending() ? 
