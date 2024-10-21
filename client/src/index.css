@@ -6,6 +6,10 @@
   html {
     scroll-behavior: smooth;
   }
+  body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #EBE9E1;
+  }
 }
 
 ::-webkit-scrollbar {

@@ -13,9 +13,9 @@ export default function GearList ({selectedProfile, addToUsersWishList}) {
 
   return (
     <>
-     <div className='user-gear-list w-4/5 min-w-80 transition duration-300 bg-orange-50 hover:bg-orange-100 rounded-2xl mb-8 drop-shadow-2xl p-6 max-h-custom-max overflow-y-scroll '>
+     <div className='user-gear-list w-4/5 min-w-80 transition duration-300 bg-profiles1 hover:bg-profiles2 rounded-2xl mb-8 drop-shadow-2xl p-6 max-h-custom-max overflow-y-scroll '>
        <ul role="list" className="divide-y divide-gray-100">
-       <li className="bg-orange-400 rounded-tl-2xl rounded-tr-2xl -mx-6 -mt-6 px-4 py-3 font-bold text-white">
+       <li className="bg-boxes rounded-tl-2xl rounded-tr-2xl -mx-6 -mt-6 px-4 py-3 font-bold text-white">
           <div className="flex justify-center">
             <span>Wishlist</span>
           </div>
