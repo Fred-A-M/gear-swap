@@ -4,7 +4,7 @@ export default function LoginPage ({changeState}) {
   return (
     <>
     <div className='flex justify-center items-center h-lvh'>
-      <div className='min-h-custom-min w-96 bg-boxes rounded-2xl flex flex-col items-center hover:drop-shadow-2xl transition duration-300'>
+      <div className='min-h-custom-min w-96 bg-boxes rounded-2xl flex flex-col items-center drop-shadow-2xl transition duration-300'>
         <div>
           <img className='rounded-full h-56 mt-5' src="/src/assets/logo2.jpeg" alt="" />
         </div>

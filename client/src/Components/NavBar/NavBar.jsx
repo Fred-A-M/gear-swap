@@ -50,18 +50,18 @@ export default function NavBar ({changeState, requestList, hardProfile, handleMo
       <div className='right-nav-items flex h-full items-center pr-3'>
         <div className='friends-icon mx-2 hover:cursor-pointer' onClick={() => {changeState('friends'); fetchRequests()}}>
           {doesUserHaveFriends() ? 
-          <HiUsers size={24} color='background'/>: 
-          <HiOutlineUsers size={24} color='background' />
+          <HiUsers size={24} className='text-background'/> : 
+          <HiOutlineUsers size={24} className='text-background' />
          }
           
         </div>
         <div onClick={() => {handleModal('requests'); fetchRequests()}} className='notfication-bell mx-2 hover:cursor-pointer'>
           {doesUserHavePendingRequests() ?
-            <HiBell size={36} color='background'/> : 
-            <HiOutlineBell size={24} color='background'/>}
+            <HiBell size={36} className='text-background'/> : 
+            <HiOutlineBell size={24} className='text-background'/>}
         </div>
         <div className='profile-icon mx-2 hover:cursor-pointer' onClick={() => {changeState('profile'); fetchRequests()}}>
-          <HiUser size={24} color='background'/>
+          <HiUser size={24} className='text-background'/>
         </div>
       </div>
     </div>

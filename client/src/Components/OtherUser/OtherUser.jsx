@@ -104,7 +104,7 @@ export default function OtherUser ({selectedProfileId, list, hardProfile, reques
             <button onClick={acceptButton} className="text-white bg-green-700 hover:bg-green-800 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">Accept Request</button>
             <button onClick={rejectButton} className="text-white bg-red-700 hover:bg-red-800 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">Reject Request</button>
           </div>
-          : <button onClick={requestButton} className="text-white bg-buttons hover:bg-buttonshover font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">Request contact details</button> }
+          : <button onClick={requestButton} className="text-white bg-buttons hover:bg-buttonshover font-bold rounded-lg text-sm px-5 py-2.5 me-2 mb-2">Request contact details</button> }
         </div>
       </div>
       <div className='other-profile-container flex h-max'>
