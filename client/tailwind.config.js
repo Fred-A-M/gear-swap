@@ -18,8 +18,8 @@ export default {
       colors: {
         background: '#EBE9E1',
         boxes: '#e43d12',
-        profiles1: '#fff7ed',
-        profiles2: '#fef0df',
+        profiles1: '#fef0df',
+        profiles2: '#fce6ca',
         buttons: '#4A90E2',
         buttonshover: '#6BAFF5',
       },
