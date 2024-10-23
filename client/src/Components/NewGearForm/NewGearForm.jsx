@@ -81,7 +81,7 @@ export default function NewGearForm ({changeProfile, hardProfile, fetchProfiles,
           <input onChange={handleModelChange} className="shadow bg-background appearance-none border rounded-xl w-full py-2 px-3 text-gray-700 text-center leading-tight focus:outline-none focus:shadow-outline" placeholder="Enter model..." required/>
         </div>
         <div>
-          <button className="bg-base hover:basehover text-white font-bold py-2 px-4 rounded-xl focus:outline-none focus:shadow-outline" type="submit">
+          <button className="bg-buttons hover:bg-buttonshover text-background font-bold py-2 px-4 rounded-xl focus:outline-none focus:shadow-outline" type="submit">
             Add Gear
           </button>
         </div>

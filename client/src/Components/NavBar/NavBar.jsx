@@ -31,11 +31,11 @@ export default function NavBar ({changeState, requestList, hardProfile, handleMo
     <>
     <div className='nav-bar-container h-16 w-full flex justify-between items-center mb-3 bg-boxes fixed z-40' >
       <div className='left-nav-items flex h-full items-center pl-3 gap-2'>
-        <div className='logo hover:cursor-pointer'>
-          <img className='rounded-full max-h-11' src="./src/assets/logo2.png" alt="logo" onClick={() => changeState('home')}/>
+        <div>
+          <img className='rounded-full max-h-11 hover:cursor-pointer' src="./src/assets/logo2.png" alt="logo" onClick={() => changeState('home')}/>
         </div>
         <div>
-          <img className='h-8 mt-2' src="./src/assets/textred.png" alt="logo" onClick={() => changeState('home')}/>
+          <img className='h-8 mt-2 hover:cursor-pointer' src="./src/assets/textred.png" alt="logo" onClick={() => changeState('home')}/>
         </div>
       </div>
       <div className='central-nav-items flex items-center absolute left-1/2 transform -translate-x-1/2'>

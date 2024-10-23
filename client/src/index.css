@@ -1,16 +1,39 @@
+@import './fonts.css';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 
 @layer base {
   html {
     scroll-behavior: smooth;
   }
   body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'roboto', sans-serif;
     background-color: #cabfa4;
   }
 }
+
+@keyframes drop-bounce {
+  0% {
+    transform: translateY(-150%);
+    /* opacity: 0; */
+  }
+  50% {
+    transform: translateY(20px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@layer utilities {
+  .drop-bounce {
+    animation: drop-bounce 2.5s ease forwards;
+  }
+}
+
 
 ::-webkit-scrollbar {
   width: 0px; 

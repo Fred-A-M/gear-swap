@@ -21,7 +21,7 @@ export default function RequestsPage ({requestList, list, hardProfile, handlePro
       <div>
         {newUsersRequests.length > 0 ? (
           <table className="table-auto border-collapse">
-          <thead className=' bg-boxes'>
+          <thead className=' bg-boxes text-background'>
             <tr>
               <th className=" px-4 py-2 min-w-80 rounded-tl-2xl">User</th>
               <th className=" px-4 py-2 min-w-80 rounded-tr-2xl">Request Date</th>

@@ -8,6 +8,7 @@ export default {
     extend: { 
       fontFamily: {
         roboto: ['Roboto', 'sans-serif'],
+        whitney: ['whitneybold', 'sans-serif']
       },
       maxHeight: {
         'custom-max': '500px'

@@ -10,9 +10,10 @@ import NavBar from './Components/NavBar/NavBar';
 import Modal from './Components/Modal/Modal';
 import FriendsPage from './Components/FriendsPage/FriendsPage';
 import LoginPage from './Components/LogInPage/LoginPage';
+import HeroPage from './Components/HeroPage/HeroPage';
 
 function App() {
-  const [state, setState] = useState('login');
+  const [state, setState] = useState('hero');
   const [hardProfile, setHardProfile] = useState(profile);
   const [selectedProfileId, setSelectedProfileId] = useState(null);
   const [selectedRequestId, setSelectedRequestId] = useState(null);
@@ -80,7 +81,8 @@ function App() {
 
   return (
     <>
-    {state === 'login' ? <LoginPage changeState={changeState} /> : 
+    {state === 'hero' && <HeroPage changeState={changeState} />}
+    {state === 'login' ? <LoginPage changeState={changeState} /> :
     <>
     <NavBar changeState={changeState} requestList={requestList} hardProfile={hardProfile} handleModal={handleModal} fetchRequests={fetchRequests} list={list} changeLocation={changeLocation} />
     <div className='pt-16'>
