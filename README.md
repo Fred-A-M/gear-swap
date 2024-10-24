@@ -1,5 +1,8 @@
 # GearSwap
 
+<img width="1246" alt="GearSwap Logo" src="https://github.com/user-attachments/assets/7c85f49b-1b10-417e-9458-07f17b164f90">
+
+
 ## Description
 
 Music creators often face creative blocks, feeling they need new equipment to create what they envision. For those with limited disposable income, this can lead to long periods of stagnation. While the best approach is often to work with what’s available, this app aims to alleviate the issue by enabling users to make cost-free equipment swaps with others. It helps build a contact list of like-minded creators interested in trading gear.
